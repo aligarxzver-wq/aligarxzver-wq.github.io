@@ -1,7 +1,22 @@
 <!DOCTYPE html><html><head><meta charset='UTF-8'><title>Admin</title><link rel='stylesheet' href='../css/admin-style.css'></head><body>
 <h1>Admin Dashboard</h1>
-<div class='grid'><div><h3>User qo'shish</h3><input id='n' placeholder='Ism'><input id='l' placeholder='Login'><input id='p' placeholder='Parol'><button onclick='addUser()'>Saqlash</button></div>
-<div><h3>Statistika</h3><p id='stats'></p></div></div>
-<h2>Foydalanuvchilar</h2><table id='users'></table>
-<h2>Hisobotlar</h2><table id='reports'></table>
-<script src='../js/admin.js'></script></body></html>
+<div class='grid'>
+<div>
+<h3>User qo'shish</h3>
+<input id='n' placeholder='Ism Familiya'>
+<input id='l' placeholder='Login'>
+<input id='p' placeholder='Parol'>
+<button onclick='addUser()'>Saqlash</button>
+</div>
+<div>
+<h3>Statistika</h3>
+<p id='stats'></p>
+<button onclick='location.href="../index.html"'>Logout</button>
+</div>
+</div>
+<h2>Foydalanuvchilar</h2>
+<table id='users'></table>
+<h2>Hisobotlar</h2>
+<table id='reports'></table>
+<script src='../js/admin.js'></script>
+</body></html>
