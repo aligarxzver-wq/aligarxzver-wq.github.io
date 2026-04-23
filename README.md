@@ -1,4 +1,4 @@
-1. Barcha fayllarni shu struktura bo'yicha joylashtiring.
+1. Barcha fayllarni shu struktura bo'yicha joylashtirilgan.
 2. index.html ni oching.
 3. Admin login: Urgaz_Carpet / Urgaz2023
 4. Admin user yaratadi.
