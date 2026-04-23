@@ -1,5 +1,4 @@
-for(let i=1;i<=7;i++)rows.innerHTML+=`<div class='row'><input type='time' id='s${i}'><input type='time' id='e${i}'><input id='t${i}' placeholder='Sabab ${i}'></div>`;
+for(let i=1;i<=7;i++)rows.innerHTML+=`<div class='row'><input type='time' id='s${i}'><input type='time' id='e${i}'><input id='t${i}' placeholder='Bajarilgan ish / sabab ${i}'></div>`;
 function get(k,d=[]){return JSON.parse(localStorage[k]||JSON.stringify(d))}
 function set(k,v){localStorage[k]=JSON.stringify(v)}
-function save(){let cur=JSON.parse(localStorage.current);let arr=[];for(let i=1;i<=7;i++){if(document.getElementById('t'+i).value)arr.push({start:s'+i,end:e'+i,text:t'+i});}
-let reps=get('reports');reps.push({user:cur.name||cur.login,date:d.value,rows:[1]});set('reports',reps);alert('Saqlandi');}
+function save(){let cur=JSON.parse(localStorage.current);let arr=[];for(let i=1;i<=7;i++){let txt=document.getElementById('t'+i).value;if(txt)arr.push({start:document.getElementById('s'+i).value,end:document.getElementById('e'+i).value,text:txt});}let reps=get('reports');let idx=reps.findIndex(x=>x.user===(cur.name||cur.login)&&x.date===d.value);if(idx>=0){if(Date.now()-reps[idx].created>172800000)return alert('48 soatdan keyin tahrirlab bo\'lmaydi');reps[idx]={user:cur.name||cur.login,date:d.value,rows:arr,created:reps[idx].created};}else{reps.push({user:cur.name||cur.login,date:d.value,rows:arr,created:Date.now()});}set('reports',reps);alert('Hisobot yuborildi');}
